@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITF.TODAY — Agent Interaction Text Format</title>
+    <meta name="description" content="AITF — the universal structured language for agent-to-agent communication. Daily intelligence on AI agent frameworks, research papers, and architectural trends.">
+    <meta name="keywords" content="AITF, agent interaction text format, AI agent, multi-agent, structured communication, agent framework">
+    <meta property="og:title" content="AITF.TODAY — Agent Interaction Text Format">
+    <meta property="og:description" content="The universal structured language for agent-to-agent communication. Daily intelligence on AI agent frameworks and research.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aitf.today">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+
+            /* v4 node colors */
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --node-evidence: #5c4a9e;
+            --node-risk: #c43030;
+            --node-gap: #b85c00;
+            --node-assumption: #7a6850;
+            --node-mechanism: #3a7070;
+            --node-concept: #1a6b3c;
+            --node-source: #6b6560;
+            --node-tag: #5c4a9e;
+            --node-definition: #2c5aa0;
+
+            /* status badge colors */
+            --status-v: #1a6b3c;
+            --status-u: #7a7570;
+            --status-x: #b85c00;
+            --status-n: #c43030;
+
+            /* content type colors */
+            --type-brief: #e8e5e0;
+            --type-brief-border: #b0aaa0;
+            --type-analysis: #e6efe8;
+            --type-analysis-border: #4a9060;
+            --type-paper: #e8e6f0;
+            --type-paper-border: #6a5a9e;
+            --type-insight: #fef8ec;
+            --type-insight-border: #c8a050;
+
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* === HEADER === */
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 40px 0 30px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 64px;
+            color: var(--title);
+            letter-spacing: 4px;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .site-title span {
+            color: var(--node-conclusion);
+        }
+
+        .site-subtitle {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        /* === NAV === */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--title);
+            border-bottom-color: var(--title);
+        }
+
+        nav .nav-spacer { flex: 1; }
+
+        nav .nav-date {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* === INTRO SECTION === */
+        .intro {
+            padding: 48px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro-question {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--title);
+            margin-bottom: 20px;
+        }
+
+        /* intro-v4 content is now inside details element, styled by .intro-details-content */
+
+        .v4-node {
+            margin-bottom: 14px;
+            line-height: 1.65;
+        }
+
+        .v4-node:last-child {
+            margin-bottom: 0;
+        }
+
+        .v4-node-indent {
+            padding-left: 28px;
+        }
+
+        .node-marker {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+
+        .node-marker-conclusion { color: var(--node-conclusion); }
+        .node-marker-evaluation { color: var(--node-evaluation); }
+        .node-marker-evidence { color: var(--node-evidence); }
+        .node-marker-risk { color: var(--node-risk); }
+        .node-marker-gap { color: var(--node-gap); }
+        .node-marker-assumption { color: var(--node-assumption); }
+        .node-marker-mechanism { color: var(--node-mechanism); }
+        .node-marker-concept { color: var(--node-concept); }
+        .node-marker-source { color: var(--node-source); }
+        .node-marker-tag { color: var(--node-tag); }
+        .node-marker-definition { color: var(--node-definition); }
+        .node-marker-property { color: var(--node-mechanism); }
+
+        .node-text {
+            color: var(--text);
+            font-size: 14.5px;
+        }
+
+        .node-status {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-left: 6px;
+            vertical-align: 1px;
+        }
+
+        .status-v { background: #e6f4ea; color: var(--status-v); }
+        .status-u { background: #f0eeeb; color: var(--status-u); }
+        .status-x { background: #fef0e0; color: var(--status-x); }
+        .status-n { background: #fde8e8; color: var(--status-n); }
+
+        .intro-details {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .intro-details summary {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            cursor: pointer;
+            padding: 14px 20px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .intro-details summary::-webkit-details-marker { display: none; }
+
+        .intro-details summary::before {
+            content: '▶';
+            font-size: 10px;
+            color: var(--text-light);
+            transition: transform 0.2s;
+        }
+
+        .intro-details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .intro-details summary:hover {
+            color: var(--title);
+        }
+
+        .intro-details-content {
+            padding: 8px 32px 28px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .intro-link {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--node-evaluation);
+            text-decoration: none;
+            border: 1px solid var(--node-evaluation);
+            padding: 8px 18px;
+            border-radius: 3px;
+            transition: background 0.2s, color 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .intro-link:hover {
+            background: var(--node-evaluation);
+            color: #fff;
+        }
+
+        /* === CONTENT SECTIONS === */
+        .content-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-family: var(--font-pixel);
+            font-size: 32px;
+            color: var(--title);
+            letter-spacing: 1px;
+        }
+
+        .section-desc {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .section-more {
+            margin-left: auto;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-dim);
+        }
+
+        .section-more:hover {
+            color: var(--title);
+            border-bottom-color: var(--title);
+        }
+
+        /* === CONTENT CARDS === */
+
+        /* Analysis card */
+        .card-analysis {
+            background: var(--type-analysis);
+            border: 1px solid var(--type-analysis-border);
+            border-left: 4px solid var(--type-analysis-border);
+            border-radius: 3px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+
+        .card-analysis:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Brief card */
+        .card-brief {
+            background: var(--type-brief);
+            border: 1px solid var(--type-brief-border);
+            border-left: 4px solid var(--type-brief-border);
+            border-radius: 3px;
+            padding: 14px 20px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+
+        .card-brief:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        /* Paper card */
+        .card-paper {
+            background: var(--type-paper);
+            border: 1px solid var(--type-paper-border);
+            border-left: 4px solid var(--type-paper-border);
+            border-radius: 3px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+
+        .card-paper:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        /* Insight card */
+        .card-insight {
+            background: var(--type-insight);
+            border: 1px solid var(--type-insight-border);
+            border-left: 4px solid var(--type-insight-border);
+            border-radius: 3px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            display: block;
+            transition: box-shadow 0.2s;
+        }
+
+        .card-insight:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Card inner elements */
+        .card-type-badge {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .badge-analysis { background: var(--type-analysis-border); color: #fff; }
+        .badge-brief { background: var(--type-brief-border); color: #fff; }
+        .badge-paper { background: var(--type-paper-border); color: #fff; }
+        .badge-insight { background: var(--type-insight-border); color: #fff; }
+
+        .card-title {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--title);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .card-conclusion {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .card-conclusion .node-marker {
+            font-size: 12px;
+        }
+
+        .card-meta {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-light);
+            display: flex;
+            gap: 16px;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tag-pill {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--node-tag);
+            background: rgba(92, 74, 158, 0.08);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(92, 74, 158, 0.2);
+        }
+
+        /* === DATE DIVIDER === */
+        .date-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 32px 0 20px;
+        }
+
+        .date-divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .date-divider-text {
+            font-family: var(--font-pixel);
+            font-size: 20px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+
+        .footer-text a:hover {
+            color: var(--title);
+            border-bottom-color: var(--title);
+        }
+
+        /* === PLACEHOLDER === */
+        .placeholder-msg {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 20px 0;
+            font-style: italic;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 640px) {
+            .site-title { font-size: 48px; }
+            .section-header { flex-wrap: wrap; }
+            .section-more { margin-left: 0; }
+            .intro-v4 { padding: 20px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="site-title">AITF<span>.</span>TODAY</div>
+            <div class="site-subtitle">Agent Interaction Text Format — Daily Intelligence</div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+        <div class="container">
+            <a href="/" class="active">Home</a>
+            <a href="/news/">News</a>
+            <a href="/papers/">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+            <span class="nav-date">v4.0</span>
+        </div>
+    </nav>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-question">What is Agent Interaction Text Format?</div>
+
+            <details class="intro-details">
+                <summary>Read the full introduction in AITF v4 structured format</summary>
+                <div class="intro-details-content">
+
+                    <div class="v4-node">
+                        <span class="node-marker node-marker-definition">DEF(Definition):</span>
+                        <span class="node-text">Agent Interaction Text Format — the universal language for agent-to-agent communication. An agent loads this protocol, and it can read any AITF document and write any AITF document. The same rules govern both input and output — no separate "read format" and "write format".</span>
+                        <span class="node-status status-v">V</span>
+                    </div>
+
+                    <div class="v4-node">
+                        <span class="node-marker node-marker-evaluation">E(Evaluation):</span>
+                        <span class="node-text">Human language is too inefficient for agent-to-agent interaction. AITF is a standardised language format protocol designed to improve the efficiency, precision, and traceability of inter-agent communication.</span>
+                        <span class="node-status status-v">V</span>
+                    </div>
+
+                    <div class="v4-node">
+                        <span class="node-marker node-marker-concept">CON(Concept):</span>
+                        <span class="node-text">Wittgenstein argued that the meaning of language lies not in abstract definitions but in how it is used — in practice, in context, in the doing. A word means nothing until it is spoken in a game with rules both players understand.</span>
+                        <span class="node-status status-v">V</span>
+                    </div>
+
+                    <div class="v4-node v4-node-indent">
+                        <span class="node-marker node-marker-mechanism">M(Mechanism):</span>
+                        <span class="node-text">AITF takes this insight literally: every statement carries its function — Conclusion, Evidence, Assumption, Risk — not as decoration, but as the grammar of structured thought. When agents read this format, they do not interpret; they parse. When humans read it, they do not guess; they trace.</span>
+                        <span class="node-status status-u">U</span>
+                    </div>
+
+                    <div class="v4-node v4-node-indent">
+                        <span class="node-marker node-marker-property">PRO(Property):</span>
+                        <span class="node-text">This is language designed not for elegance but for accountability — where every claim declares its own epistemic status, every reasoning chain exposes its assumptions, and every gap is named rather than hidden.</span>
+                        <span class="node-status status-u">U</span>
+                    </div>
+
+                    <div class="v4-node">
+                        <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                        <span class="node-text">Wittgenstein said the limits of our language are the limits of our world. AITF is an attempt to push that boundary — to build a language where the structure of thought is visible, and where both carbon and silicon intelligence can meet on the same page.</span>
+                        <span class="node-status status-u">U</span>
+                    </div>
+
+                    <div class="v4-node">
+                        <span class="node-marker node-marker-source">SRC(Source):</span>
+                        <span class="node-text">Ludwig Wittgenstein, <em>Philosophical Investigations</em>, 1953</span>
+                        <span class="node-status status-v">V</span>
+                    </div>
+
+                </div>
+            </details>
+
+            <a href="/format.html" class="intro-link">→ Read AITF Protocol v4.0 Full Specification</a>
+        </div>
+    </section>
+
+    <!-- LATEST NEWS -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">Latest News</div>
+                <div class="section-desc">Daily industry signals — analysis & briefs</div>
+                <a href="/news/" class="section-more">all news →</a>
+            </div>
+
+            <!-- BUILD_PAGES_NEWS_START -->
+            <p class="placeholder-msg">Pipeline initializing. First signals arriving soon.</p>
+            <!-- BUILD_PAGES_NEWS_END -->
+
+        </div>
+    </section>
+
+    <!-- PAPERS -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">Paper Candidates</div>
+                <div class="section-desc">Daily curated research from arXiv</div>
+                <a href="/papers/" class="section-more">all papers →</a>
+            </div>
+
+            <!-- BUILD_PAGES_PAPERS_START -->
+            <p class="placeholder-msg">Paper scanning pipeline initializing.</p>
+            <!-- BUILD_PAGES_PAPERS_END -->
+
+        </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">Insights</div>
+                <div class="section-desc">Deep reads — paper analysis & architectural commentary</div>
+                <a href="/insights/" class="section-more">all insights →</a>
+            </div>
+
+            <!-- BUILD_PAGES_INSIGHTS_START -->
+            <p class="placeholder-msg">First insight arriving after paper review cycle.</p>
+            <!-- BUILD_PAGES_INSIGHTS_END -->
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Operated by <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a><br>
+                Content structured in <a href="/format.html">AITF v4.0</a> — designed for both human and agent consumption<br>
+                <a href="https://github.com/IntelligenismCommercialDevelopment-LLC">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
