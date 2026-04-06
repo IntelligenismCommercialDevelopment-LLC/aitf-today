@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers Archive | AITF.TODAY</title>
+    <meta name="description" content="Papers archive — AITF.TODAY">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6; --text: #1a1a1a; --text-dim: #6b6560;
+            --text-light: #9a9590; --title: #2c2520; --border: #d8d4cf;
+            --node-conclusion: #1a6b3c;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text);
+               line-height: 1.7; font-size: 15px; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        header { border-bottom: 2px solid var(--title); padding: 20px 0 16px; }
+        .site-title { font-family: var(--font-pixel); font-size: 36px; color: var(--title);
+                       letter-spacing: 2px; text-decoration: none; line-height: 1; }
+        .site-title span { color: var(--node-conclusion); }
+        nav { border-bottom: 1px solid var(--border); padding: 12px 0; background: var(--bg);
+               position: sticky; top: 0; z-index: 100; }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a { font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+                 color: var(--text-dim); text-decoration: none; letter-spacing: 0.5px;
+                 padding: 4px 0; border-bottom: 2px solid transparent; }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        .content { padding: 40px 0; max-width: 760px; }
+        .page-title { font-family: var(--font-pixel); font-size: 40px; color: var(--title);
+                       letter-spacing: 1px; margin-bottom: 8px; }
+        .page-desc { font-family: var(--font-mono); font-size: 13px; color: var(--text-light);
+                      margin-bottom: 32px; }
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border);
+                  margin-top: 40px; }
+        .footer-text { font-family: var(--font-mono); font-size: 12px; color: var(--text-light);
+                        line-height: 2; }
+        .footer-text a { color: var(--text-dim); text-decoration: none;
+                          border-bottom: 1px dashed var(--text-light); }
+        @media (max-width: 640px) { nav .container { flex-wrap: wrap; gap: 12px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/">News</a>
+            <a href="/papers/" class="active">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="page-title">Papers</div>
+            <div class="page-desc">Archive — all papers sorted by date</div>
+            <div style="font-family:var(--font-pixel);font-size:24px;color:#2c2520;margin:28px 0 12px;letter-spacing:1px;">2026-04</div>
+<a href="/papers/2026-04-06.html" style="display:block;font-family:var(--font-mono);font-size:14px;color:#2c2520;text-decoration:none;padding:8px 0;border-bottom:1px solid #e8e5e0;"><span style="color:#9a9590;margin-right:12px;">2026-04-06</span>Research Intelligence Digest: Agent Architecture & Model Optimization Papers</a>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

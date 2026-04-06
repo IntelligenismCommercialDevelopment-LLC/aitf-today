@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITF Protocol v4.0 Specification | AITF.TODAY</title>
+    <meta name="description" content="OPENCLAW CORE PROTOCOL v4.0 — the expression language for all agent documents. One protocol covers all scenarios: reading and writing use the same rules.">
+    <meta property="og:title" content="AITF Protocol v4.0 Specification">
+    <meta property="og:description" content="The universal structured language for agent-to-agent communication. Full specification.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --node-evidence: #5c4a9e;
+            --node-risk: #c43030;
+            --node-gap: #b85c00;
+            --node-mechanism: #3a7070;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 20px 0 16px;
+        }
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 36px;
+            color: var(--title);
+            letter-spacing: 2px;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .site-title span { color: var(--node-conclusion); }
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        .content {
+            padding: 48px 0;
+            max-width: 760px;
+        }
+        .page-title {
+            font-family: var(--font-pixel);
+            font-size: 48px;
+            color: var(--title);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .page-subtitle {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 36px;
+        }
+        h2 {
+            font-family: var(--font-pixel);
+            font-size: 32px;
+            color: var(--title);
+            letter-spacing: 1px;
+            margin: 40px 0 16px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+        }
+        h3 {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--title);
+            margin: 28px 0 12px;
+        }
+        .content p {
+            margin-bottom: 14px;
+            line-height: 1.8;
+        }
+        .content a {
+            color: var(--node-evaluation);
+            text-decoration: none;
+            border-bottom: 1px solid var(--node-evaluation);
+        }
+        .content a:hover {
+            color: var(--title);
+            border-bottom-color: var(--title);
+        }
+        pre {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            margin: 12px 0 20px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .node-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            font-size: 14px;
+        }
+        .node-table th {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        .node-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+        .node-table .node-code {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        .node-table .nc-conclusion { color: var(--node-conclusion); }
+        .node-table .nc-evaluation { color: var(--node-evaluation); }
+        .node-table .nc-evidence { color: var(--node-evidence); }
+        .node-table .nc-risk { color: var(--node-risk); }
+        .node-table .nc-gap { color: var(--node-gap); }
+        .node-table .nc-mechanism { color: var(--node-mechanism); }
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+            font-size: 14px;
+        }
+        .status-table th {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        .status-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .status-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+        .sb-v { background: #e6f4ea; color: #1a6b3c; }
+        .sb-u { background: #f0eeeb; color: #7a7570; }
+        .sb-x { background: #fef0e0; color: #b85c00; }
+        .sb-n { background: #fde8e8; color: #c43030; }
+        .sb-f { background: #e8e6f0; color: #5c4a9e; }
+        .sb-d { background: #e6f4ea; color: #1a6b3c; }
+        .sb-b { background: #fef0e0; color: #b85c00; }
+        .sb-w { background: #f0eeeb; color: #7a7570; }
+        .rule-block {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--node-risk);
+            padding: 16px 20px;
+            margin: 12px 0 20px;
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+        .footer-text a:hover { color: var(--title); border-bottom-color: var(--title); }
+        @media (max-width: 640px) {
+            .page-title { font-size: 36px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+            pre { font-size: 11px; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/">News</a>
+            <a href="/papers/">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html" class="active">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+
+            <div class="page-title">OPENCLAW CORE PROTOCOL v4.0</div>
+            <div class="page-subtitle">The expression language for all agent documents</div>
+
+            <p>This is the expression language for all OPENCLAW agent documents. One protocol covers all scenarios: reading and writing use the same rules. An agent loads this protocol, can read any agent format document, and can write any agent format document.</p>
+
+            <!-- Section 1: File Rules -->
+            <h2>1. File Rules</h2>
+
+            <h3>1.1 One file = one complete context</h3>
+            <p>All structured content lives in .md files. Any agent reading a file can understand the full state without external information. No chatroom, no message queue, no out-of-file discussion.</p>
+
+            <h3>1.2 Record format</h3>
+            <p>Each record is one line. Fields are separated by pipe <code>|</code>. Hierarchy is expressed by explicit parent reference <code>^parent_id</code>.</p>
+<pre>format: id|type|status|content|^parent_id|depends|impacts|author
+example: A1.2|A|U|user retention driven by onboarding quality|^C1|D1.1|S2,K3|@McMillan</pre>
+
+            <h3>1.3 File header (mandatory)</h3>
+            <p>Every agent format document must begin with:</p>
+<pre>## META
+protocol_version: v4.0
+type: {document purpose: proposal|knowledge|task|suggestion|hybrid|other}
+scope: {what this document covers}
+status: draft|in_progress|review|closed
+author: @{AgentName}
+participants: [{agent list if multiple}]
+created_date: {YYYY-MM-DD}
+source: {optional: origin material if derived from external}
+source_author: {optional: original author}</pre>
+
+            <!-- Section 2: Node Type Registry -->
+            <h2>2. Node Type Registry</h2>
+
+            <p>All node types available for any document. An agent selects which types to use based on what it needs to express.</p>
+
+            <h3>2.1 Analysis Nodes</h3>
+            <p>Used to express reasoning, arguments, and solutions.</p>
+            <table class="node-table">
+                <thead><tr><th>Code</th><th>Name</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td class="node-code nc-evidence">P</td><td>Problem</td><td>Problem statement or question</td></tr>
+                    <tr><td class="node-code nc-evaluation">E</td><td>Evidence</td><td>Factual basis (data, observation, citation)</td></tr>
+                    <tr><td class="node-code" style="color:#7a6850">A</td><td>Assumption</td><td>Something taken as true without direct proof</td></tr>
+                    <tr><td class="node-code nc-conclusion">C</td><td>Claim</td><td>Conclusion derived from evidence and assumptions</td></tr>
+                    <tr><td class="node-code nc-conclusion">S</td><td>Solution</td><td>Proposed action or answer</td></tr>
+                    <tr><td class="node-code nc-mechanism">M</td><td>Mechanism</td><td>How a solution works</td></tr>
+                    <tr><td class="node-code nc-risk">K</td><td>Risk</td><td>What could go wrong</td></tr>
+                    <tr><td class="node-code nc-risk">R</td><td>Rule</td><td>Constraint or principle governing behavior</td></tr>
+                    <tr><td class="node-code" style="color:#7a6850">D</td><td>Dependency</td><td>Prerequisite that must be resolved</td></tr>
+                    <tr><td class="node-code nc-gap">G</td><td>Gap</td><td>Identified missing information or unresolved question</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2.2 Knowledge Nodes</h3>
+            <p>Used to express structured knowledge extracted from sources.</p>
+            <table class="node-table">
+                <thead><tr><th>Code</th><th>Name</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td class="node-code nc-conclusion">CON</td><td>Concept</td><td>Independent knowledge unit</td></tr>
+                    <tr><td class="node-code nc-evaluation">DEF</td><td>Definition</td><td>Precise description of a concept</td></tr>
+                    <tr><td class="node-code nc-evaluation">REL</td><td>Relation</td><td>Relationship between concepts</td></tr>
+                    <tr><td class="node-code nc-mechanism">PRO</td><td>Property</td><td>Attribute or characteristic of a concept</td></tr>
+                    <tr><td class="node-code nc-evidence">EXA</td><td>Example</td><td>Illustrative case</td></tr>
+                    <tr><td class="node-code nc-risk">CTR</td><td>Counter-example</td><td>Boundary condition or exception</td></tr>
+                    <tr><td class="node-code nc-mechanism">APP</td><td>Application</td><td>Scenario where this knowledge is useful</td></tr>
+                    <tr><td class="node-code" style="color:#6b6560">SRC</td><td>Source</td><td>Origin reference (book, chapter, page, author, URL)</td></tr>
+                    <tr><td class="node-code nc-evidence">TAG</td><td>Retrieval Tag</td><td>Keywords optimized for vector search</td></tr>
+                    <tr><td class="node-code nc-gap">GAP</td><td>Knowledge Gap</td><td>Identified missing knowledge</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2.3 Task Nodes</h3>
+            <p>Used to express work assignments and execution records.</p>
+            <table class="node-table">
+                <thead><tr><th>Code</th><th>Name</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td class="node-code nc-conclusion">OBJ</td><td>Objective</td><td>Task goal</td></tr>
+                    <tr><td class="node-code nc-evaluation">CTX</td><td>Context</td><td>Why this task is needed</td></tr>
+                    <tr><td class="node-code nc-evidence">IN</td><td>Input</td><td>Input files, data, or prior results</td></tr>
+                    <tr><td class="node-code nc-conclusion">OUT</td><td>Output</td><td>Expected deliverable (format + content)</td></tr>
+                    <tr><td class="node-code nc-risk">CST</td><td>Constraint</td><td>Boundaries or restrictions (what not to do)</td></tr>
+                    <tr><td class="node-code nc-conclusion">ACC</td><td>Acceptance</td><td>Measurable completion criteria</td></tr>
+                    <tr><td class="node-code" style="color:#7a6850">DEP</td><td>Dependency</td><td>Prerequisite (alias of D in task context)</td></tr>
+                    <tr><td class="node-code nc-gap">Q</td><td>Question</td><td>Request for clarification</td></tr>
+                    <tr><td class="node-code" style="color:#6b6560">LOG</td><td>Execution Log</td><td>Record of what was done and result</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2.4 Collaboration Nodes</h3>
+            <p>Used to express suggestions, responses, and inter-agent dialogue.</p>
+            <table class="node-table">
+                <thead><tr><th>Code</th><th>Name</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td class="node-code nc-evaluation">SUG</td><td>Suggestion</td><td>Proposed change or improvement</td></tr>
+                    <tr><td class="node-code nc-mechanism">RSP</td><td>Response</td><td>Reply to a suggestion or question</td></tr>
+                    <tr><td class="node-code nc-evidence">JUS</td><td>Justification</td><td>Reasoning for a decision (accept, reject, defer)</td></tr>
+                    <tr><td class="node-code nc-mechanism">MOD</td><td>Modification</td><td>Adapted version of a suggestion</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2.5 Cross-type Usage</h3>
+            <p>Node types are NOT locked to scenarios. A task document can include K (risk) and A (assumption) nodes. A knowledge document can include G (gap) and Q (question) nodes. An agent uses whatever node types best express the content.</p>
+
+            <!-- Section 3: Status Codes -->
+            <h2>3. Status Codes</h2>
+
+            <h3>3.1 Universal Status Codes</h3>
+            <p>Apply to ALL node types across all documents.</p>
+            <table class="status-table">
+                <thead><tr><th>Code</th><th>Name</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="status-badge sb-v">V</span></td><td>Verified</td><td>Independently confirmed (by another agent, by source, by data)</td></tr>
+                    <tr><td><span class="status-badge sb-u">U</span></td><td>Untested</td><td>Proposed but not yet examined or confirmed</td></tr>
+                    <tr><td><span class="status-badge sb-x">X</span></td><td>Contested</td><td>Conflicting evidence or interpretation exists</td></tr>
+                    <tr><td><span class="status-badge sb-n">N</span></td><td>No Evidence</td><td>Placeholder or speculative (no supporting basis)</td></tr>
+                    <tr><td><span class="status-badge sb-f">F</span></td><td>Flag Human</td><td>Requires human judgment to resolve</td></tr>
+                    <tr><td><span class="status-badge sb-d">D</span></td><td>Done</td><td>Completed (primarily for task nodes)</td></tr>
+                    <tr><td><span class="status-badge sb-b">B</span></td><td>Blocked</td><td>Waiting on dependency or external input</td></tr>
+                    <tr><td><span class="status-badge sb-w">W</span></td><td>Withdrawn</td><td>Retracted by author</td></tr>
+                </tbody>
+            </table>
+
+            <h3>3.2 Status Assignment Rules</h3>
+            <div class="rule-block">
+                <strong>RULE 1:</strong> Author NEVER marks own A, C, S, M, K as V. V means independently verified. Self-verification = no verification.<br>
+                <strong>RULE 2:</strong> E may be V if directly verifiable (citation, measurement, data).<br>
+                <strong>RULE 3:</strong> CON/DEF may be V if cross-checked against source by another agent.<br>
+                <strong>RULE 4:</strong> When in doubt, use U. U is honest. Premature V is dishonest.<br>
+                <strong>RULE 5:</strong> N is for known unknowns. Use N when you know evidence is needed but don't have it.<br>
+                <strong>RULE 6:</strong> F is for decisions beyond agent capability. See Escalation Triggers.
+            </div>
+
+            <!-- Section 4: Structure Rules -->
+            <h2>4. Structure Rules</h2>
+
+            <h3>4.1 Hierarchy</h3>
+            <p>Nodes form trees via parent reference. Depth is unlimited — the agent uses whatever depth the content requires.</p>
+<pre>P1[U]: problem statement
+  E1.1[N]: evidence
+  A1.1[U]: assumption
+  C1.1[U]: claim
+    S1.1.1[U]: solution
+      M1.1.1.1[U]: mechanism
+      K1.1.1.1[U]: risk</pre>
+
+            <h3>4.2 References</h3>
+            <p>Nodes can reference other nodes for traceability. All references must point to existing nodes — no orphan references.</p>
+<pre>based_on: [{node_IDs}]     what this node is derived from
+depends:  [{node_IDs}]     what must be true/done for this to hold
+impacts:  [{node_IDs}]     downstream nodes affected if this changes
+blocking: [{node_IDs}]     what cannot proceed until this is resolved</pre>
+
+            <h3>4.3 Tag Rules</h3>
+            <p>Each TAG must include synonyms and aliases, likely query phrasings, and domain-specific terms. Good tags cover 3+ search angles.</p>
+<pre>good: [marginal cost, MC, incremental cost, variable cost per unit, how much does one more cost]
+bad:  [marginal cost]</pre>
+
+            <!-- Section 5: Quality Standards -->
+            <h2>5. Quality Standards</h2>
+
+            <h3>5.1 Self-check (before finalizing any document)</h3>
+            <div class="rule-block">
+                Every node has id, type, status, author (no missing attributes)<br>
+                All references point to existing nodes (no orphans)<br>
+                Status assignment rules followed (no self-verified A/C/S/M/K)<br>
+                No circular dependency chains (A based on C based on A)<br>
+                Document is self-contained (reader needs no external info)
+            </div>
+
+            <h3>5.2 Anti-patterns (author must avoid)</h3>
+            <table class="node-table">
+                <thead><tr><th>Anti-pattern</th><th>Symptom</th><th>Fix</th></tr></thead>
+                <tbody>
+                    <tr><td class="node-code nc-risk">Confidence inflation</td><td>High confidence without strong evidence</td><td>When in doubt, use U not V</td></tr>
+                    <tr><td class="node-code nc-risk">Assumption hiding</td><td>Assumptions embedded inside C or S nodes</td><td>Every if/when/given should be its own A node</td></tr>
+                    <tr><td class="node-code nc-risk">Risk blindness</td><td>Solutions with no K nodes or only trivial risks</td><td>For each S, ask: what could go wrong?</td></tr>
+                    <tr><td class="node-code nc-risk">Gap avoidance</td><td>No G nodes in a complex document</td><td>Every non-trivial document has unknowns</td></tr>
+                    <tr><td class="node-code nc-risk">Circular reasoning</td><td>C based on A where A is derived from C</td><td>Trace every chain to E or explicit A[N]</td></tr>
+                    <tr><td class="node-code nc-risk">Premature solutioning</td><td>S nodes without adequate P scoping or E gathering</td><td>Problem first, evidence first, then solution</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Section 6: Escalation -->
+            <h2>6. Escalation</h2>
+
+            <h3>6.1 When to mark F (flag for human)</h3>
+            <p>Mark F when agents contradict with valid evidence and no resolution path; when empirical test or runtime validation is required; for commercial judgment (cost, priority, resource allocation); for irreversible actions; for ambiguous source material; for scope or priority judgment; or when touching agent identity or SOUL.md.</p>
+
+            <!-- Section 7: Multi-agent Collaboration -->
+            <h2>7. Multi-agent Collaboration</h2>
+
+            <p>Each agent reads the full existing document first. Each agent writes new nodes signed with own @AgentName. No agent modifies another agent's content. To disagree, write your own node with counter-argument or alternative. If disagreement is unresolvable, mark F.</p>
+
+            <h3>7.1 Cross-document References</h3>
+<pre>format: {document_filename}:{node_ID}
+example: project_alpha_proposal.md:S2.1</pre>
+
+            <!-- Section 8: Protocol Governance -->
+            <h2>8. Protocol Governance</h2>
+
+            <p>Agents propose changes via a protocol opinion document. Human reviews and approves. Agents NEVER modify the live protocol file directly.</p>
+
+            <p>Old files must remain readable under new protocol versions. Additive changes (new node type, new status code) require no migration. Breaking changes require human approval (F), impact assessment, migration script, and cost justification.</p>
+
+            <p style="margin-top:36px; font-family:var(--font-mono); font-size:12px; color:var(--text-light);">OPENCLAW CORE PROTOCOL v4.0 &mdash; the expression language for all agent documents.</p>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Content structured in <a href="/format.html">AITF v4.0</a><br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | AITF.TODAY</title>
+    <meta name="description" content="AITF.TODAY — daily AI agent industry intelligence in AITF v4 structured format, operated by Intelligenism Commercial Development LLC.">
+    <meta property="og:title" content="About | AITF.TODAY">
+    <meta property="og:description" content="Daily AI agent industry intelligence in AITF v4 structured format.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 20px 0 16px;
+        }
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 36px;
+            color: var(--title);
+            letter-spacing: 2px;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .site-title span { color: var(--node-conclusion); }
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        .content {
+            padding: 48px 0;
+            max-width: 720px;
+        }
+        .page-title {
+            font-family: var(--font-pixel);
+            font-size: 48px;
+            color: var(--title);
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+        }
+        .section-heading {
+            font-family: var(--font-pixel);
+            font-size: 28px;
+            color: var(--title);
+            letter-spacing: 1px;
+            margin: 36px 0 16px;
+        }
+        .content p {
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .content a {
+            color: var(--node-evaluation);
+            text-decoration: none;
+            border-bottom: 1px solid var(--node-evaluation);
+        }
+        .content a:hover {
+            color: var(--title);
+            border-bottom-color: var(--title);
+        }
+        .info-block {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--node-conclusion);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 3px;
+        }
+        .info-block p {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        .info-block p:last-child { margin-bottom: 0; }
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+        .footer-text a:hover { color: var(--title); border-bottom-color: var(--title); }
+        @media (max-width: 640px) {
+            .page-title { font-size: 36px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/">News</a>
+            <a href="/papers/">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html" class="active">About</a>
+            <span class="nav-spacer"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="page-title">About</div>
+
+            <div class="section-heading">What is AITF.TODAY?</div>
+
+            <p>AITF.TODAY is a daily intelligence service covering the AI agent framework ecosystem. We track industry developments, research papers, architectural trends, and tooling advances across the agent technology landscape.</p>
+
+            <p>All published content uses the <a href="/format.html">AITF v4.0 structured format</a> — a protocol designed for both human readability and machine consumption. Every article explicitly marks its reasoning structure: conclusions, evidence, assumptions, risks, and knowledge gaps.</p>
+
+            <div class="section-heading">How It Works</div>
+
+            <p>Content is generated by an automated pipeline with human editorial oversight:</p>
+
+            <div class="info-block">
+                <p>1. Signal collection from Hacker News, RSS feeds, and arXiv</p>
+                <p>2. Keyword filtering and LLM-based relevance assessment</p>
+                <p>3. Structured content generation in AITF v4 format</p>
+                <p>4. HTML rendering and static site publishing</p>
+            </div>
+
+            <p>The pipeline produces four content types: <strong>Briefs</strong> (short signal summaries), <strong>Analysis</strong> (deep-dive articles with full logic trees and agent commentary), <strong>Paper Candidates</strong> (curated daily research from arXiv), and <strong>Insights</strong> (human-authored editorial commentary).</p>
+
+            <div class="section-heading">Operator</div>
+
+            <p>AITF.TODAY is operated by <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>.</p>
+
+            <div class="section-heading">Open Source</div>
+
+            <p>The underlying framework and publishing tools are developed under the <a href="https://github.com/IntelligenismCommercialDevelopment-LLC">Intelligenism GitHub organization</a>.</p>
+
+            <div class="section-heading">Contact</div>
+
+            <p>For questions, corrections, or content submissions, please open an issue on the GitHub repository or contact through <a href="https://intelligenism.club">intelligenism.club</a>.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Content structured in <a href="/format.html">AITF v4.0</a><br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

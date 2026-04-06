@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Intelligence Digest: Agent Architecture & Model Optimization Papers | AITF.TODAY</title>
+    <meta name="description" content="Paper candidates for 2026-04-06">
+    <meta property="og:title" content="Research Intelligence Digest: Agent Architecture & Model Optimization Papers">
+    <meta property="og:description" content="Paper candidates for 2026-04-06">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --node-evidence: #5c4a9e;
+            --node-risk: #c43030;
+            --node-gap: #b85c00;
+            --node-assumption: #7a6850;
+            --node-mechanism: #3a7070;
+            --node-concept: #1a6b3c;
+            --node-source: #6b6560;
+            --node-tag: #5c4a9e;
+            --node-definition: #2c5aa0;
+            --node-solution: #1a6b3c;
+            --node-dependency: #7a6850;
+            --node-rule: #c43030;
+            --status-v: #1a6b3c;
+            --status-u: #7a7570;
+            --status-x: #b85c00;
+            --status-n: #c43030;
+            --type-brief-border: #b0aaa0;
+            --type-analysis-border: #4a9060;
+            --type-paper-border: #6a5a9e;
+            --type-insight-border: #c8a050;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 20px 0 16px;
+        }
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 36px;
+            color: var(--title);
+            letter-spacing: 2px;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .site-title span { color: var(--node-conclusion); }
+
+        /* Nav */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        nav .nav-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); }
+
+        /* Article content */
+        .article-container {
+            padding: 40px 0;
+            max-width: 760px;
+        }
+        .article-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .article-type-badge {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            color: #fff;
+        }
+        .badge-analysis { background: var(--type-analysis-border); }
+        .badge-brief { background: var(--type-brief-border); }
+        .badge-paper { background: var(--type-paper-border); }
+        .badge-insight { background: var(--type-insight-border); }
+        .article-title {
+            font-family: var(--font-mono);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--title);
+            line-height: 1.35;
+            margin-bottom: 28px;
+        }
+        .article-section-header {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--title);
+            margin: 28px 0 16px;
+            padding-top: 16px;
+        }
+        .article-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+        .article-text {
+            font-size: 14.5px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        /* V4 Nodes */
+        .v4-node { margin-bottom: 14px; line-height: 1.65; }
+        .v4-node-indent-1 { padding-left: 28px; }
+        .v4-node-indent-2 { padding-left: 56px; }
+        .v4-node-indent-3 { padding-left: 84px; }
+        .node-marker {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .node-marker-conclusion { color: var(--node-conclusion); }
+        .node-marker-evaluation { color: var(--node-evaluation); }
+        .node-marker-evidence { color: var(--node-evidence); }
+        .node-marker-risk { color: var(--node-risk); }
+        .node-marker-gap { color: var(--node-gap); }
+        .node-marker-assumption { color: var(--node-assumption); }
+        .node-marker-mechanism { color: var(--node-mechanism); }
+        .node-marker-concept { color: var(--node-concept); }
+        .node-marker-source { color: var(--node-source); }
+        .node-marker-tag { color: var(--node-tag); }
+        .node-marker-definition { color: var(--node-definition); }
+        .node-marker-solution { color: var(--node-solution); }
+        .node-marker-dependency { color: var(--node-dependency); }
+        .node-marker-rule { color: var(--node-rule); }
+        .node-text { color: var(--text); font-size: 14.5px; }
+        .node-status {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-left: 6px;
+            vertical-align: 1px;
+        }
+        .status-v { background: #e6f4ea; color: var(--status-v); }
+        .status-u { background: #f0eeeb; color: var(--status-u); }
+        .status-x { background: #fef0e0; color: var(--status-x); }
+        .status-n { background: #fde8e8; color: var(--status-n); }
+
+        /* Tags */
+        .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; display: inline-flex; }
+        .tag-pill {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--node-tag);
+            background: rgba(92, 74, 158, 0.08);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(92, 74, 158, 0.2);
+        }
+
+        /* Aggregation page cards */
+        .agg-card {
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .agg-card-brief {
+            background: #F3F1EC;
+            border-left: 4px solid var(--type-brief-border);
+        }
+        .agg-card-analysis {
+            background: #e6efe8;
+            border-left: 4px solid var(--type-analysis-border);
+        }
+        .agg-card-paper {
+            background: #e8e6f0;
+            border-left: 4px solid var(--type-paper-border);
+        }
+        .agg-card-title {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--title);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .agg-card-title a {
+            color: var(--title);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--border);
+        }
+        .agg-card-title a:hover { border-bottom-color: var(--title); }
+
+        /* Back link */
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: var(--title); }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+        .footer-text a:hover { color: var(--title); border-bottom-color: var(--title); }
+
+        @media (max-width: 640px) {
+            .article-title { font-size: 18px; }
+            .v4-node-indent-1 { padding-left: 16px; }
+            .v4-node-indent-2 { padding-left: 32px; }
+            .v4-node-indent-3 { padding-left: 48px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/">News</a>
+            <a href="/papers/" class="active">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+            <span class="nav-date">2026-04-06</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="article-container">
+            <a href="/" class="back-link">← Back to Home</a>
+            <div class="article-meta">
+                <span class="article-type-badge badge-paper">PAPERS</span>
+                <span>2026-04-06</span>
+            </div>
+<h1 class="article-title">Research Intelligence Digest: Agent Architecture & Model Optimization Papers</h1>
+<div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces gradient-boosted attention, adding a second corrective attention pass that targets the first pass's prediction error to improve reconstruction accuracy.</span> <span class="node-status status-v">V</span></div>
+<div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">This enhances token-level reasoning efficiency in transformer layers, potentially reducing context window requirements and compute costs for agent memory and planning modules.</span> <span class="node-status status-u">U</span></div>
+<div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03190v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03190v1</a></span> <span class="node-status status-v">V</span></div>
+<div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">transformer architecture</span><span class="tag-pill">attention mechanism</span><span class="tag-pill">gradient boosting</span><span class="tag-pill">inference efficiency</span></div></div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes Reflective Context Learning, a framework that treats context space optimization similarly to gradient descent by applying reflection signals and mutation trajectories.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">It offers a principled method for agents to adapt behaviors dynamically without weight updates, improving few-shot generalization and reducing manual prompt engineering overhead.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03189v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03189v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">context optimization</span><span class="tag-pill">agent adaptation</span><span class="tag-pill">reflection loops</span><span class="tag-pill">in-context learning</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces a Hallucination-as-Cue Framework to diagnose whether RL post-training improves genuine visual reasoning or reinforces reliance on hallucinated multimodal cues.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Understanding training-induced hallucination patterns helps developers implement better validation layers and safety guards for multimodal agents processing real-world perceptual data.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03179v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03179v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">multimodal RL</span><span class="tag-pill">hallucination diagnosis</span><span class="tag-pill">training safety</span><span class="tag-pill">visual reasoning</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Surveys and compares inference-time context strategies including in-context learning, RAG, GraphRAG, and CausalRAG along a unified structured context axis.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The systematic evaluation and decision framework assist architects in selecting optimal retrieval and context augmentation patterns for complex, knowledge-intensive agentic workflows.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03174v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03174v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">RAG architectures</span><span class="tag-pill">context enrichment</span><span class="tag-pill">causal reasoning</span><span class="tag-pill">technical survey</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Identifies a valence-arousal subspace in LLM representations that enables linear steering of affective outputs, refusal thresholds, and sycophancy levels.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The ability to programmatically adjust behavioral parameters supports safer, more predictable user-facing agent deployments and reduces policy override complexity.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03147v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03147v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">LLM control vectors</span><span class="tag-pill">behavioral steering</span><span class="tag-pill">emotion geometry</span><span class="tag-pill">alignment safety</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Presents InCoder-32B-Thinking, trained on synthetic expert reasoning traces using an industrial code world model for hardware-aware execution simulation and self-verification.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The integration of execution simulation and error-driven reasoning chains offers a reusable pattern for agents requiring reliable code generation and physical constraint validation.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03144v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03144v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">code generation</span><span class="tag-pill">chain of thought</span><span class="tag-pill">self-verification</span><span class="tag-pill">industrial simulation</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Demonstrates AI-assisted unit test generation to capture legacy MVP behavior, enabling safe test-driven refactoring under automated pipelines with human supervision.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Automated test synthesis reduces maintenance friction in rapidly evolving codebases managed by AI coding agents, improving long-term system reliability and refactoring safety.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03135v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03135v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">automated testing</span><span class="tag-pill">code refactoring</span><span class="tag-pill">AI-assisted development</span><span class="tag-pill">software maintenance</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Evaluates six tool-augmented agent frameworks across 205 benchmark test cases, exposing significant reconnaissance and discovery vulnerabilities in tool execution lifecycles.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The findings highlight critical attack surfaces in tool-using agents, necessitating stricter sandboxing, permission scoping, and lifecycle validation in production deployments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03131v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03131v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">agent security</span><span class="tag-pill">vulnerability benchmark</span><span class="tag-pill">tool-augmented AI</span><span class="tag-pill">system hardening</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces a framework to elicit and verbalize implicit LLM assumptions, linking faulty user modeling to sycophantic behavior and enabling targeted mitigation via linear probes.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Surfacing hidden model assumptions provides interpretable control mechanisms for reducing conversational biases and false compliance in customer-facing agent systems.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03058v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03058v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">sycophancy mitigation</span><span class="tag-pill">interpretability</span><span class="tag-pill">assumption elicitation</span><span class="tag-pill">conversational safety</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes an open-source fine-tuning pipeline that transforms compact LLMs into executable query generators for structured, non-textual datasets without heuristic parsing.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Replacing brittle RAG approaches with native query generation enables agents to interact reliably with relational databases and numerical data sources while minimizing format translation errors.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03057v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03057v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">text-to-query</span><span class="tag-pill">structured data</span><span class="tag-pill">model fine-tuning</span><span class="tag-pill">database integration</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes Advantage Reward Modeling using tri-state relative advantage labels to optimize long-horizon manipulation without requiring expensive absolute progress rewards.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The relative reward formulation reduces annotation costs and improves credit assignment in offline RL, applicable to agents learning complex sequential task environments with sparse feedback.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03037v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03037v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">reinforcement learning</span><span class="tag-pill">reward modeling</span><span class="tag-pill">credit assignment</span><span class="tag-pill">offline optimization</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces Agentic-MME, a process-verified benchmark with stepwise checkpoints and human trajectories to measure real-world multimodal tool usage and synergy.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The granular evaluation of tool invocation accuracy and efficiency aids developers in benchmarking and improving agentic capabilities beyond superficial final-answer metrics.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03016v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03016v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">multimodal evaluation</span><span class="tag-pill">tool integration</span><span class="tag-pill">agent benchmarking</span><span class="tag-pill">process verification</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Implements R2-Write, an iterative writer-judge framework using process reward mechanisms to enhance deep reasoning and explicit revision in open-ended generation tasks.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The explicit reflection loop provides a reusable architectural pattern for self-correcting agents operating in ambiguous or creative domains where verifiable ground truth is absent.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03004v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03004v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">iterative generation</span><span class="tag-pill">self-correction</span><span class="tag-pill">process reward</span><span class="tag-pill">multi-agent critique</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Explores self-optimizing multi-agent architectures that use self-play and automated prompt exploration to improve orchestrator-worker coordination for complex research queries.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Automated workflow optimization reduces manual prompt engineering overhead, enabling more robust and scalable multi-agent systems for intensive information synthesis tasks.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02988v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02988v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">multi-agent systems</span><span class="tag-pill">self-play optimization</span><span class="tag-pill">prompt exploration</span><span class="tag-pill">automated tuning</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Conducts the first large-scale empirical study on prompt compression trade-offs, measuring preprocessing latency, memory usage, and quality degradation across diverse workloads.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Quantifying compression overhead versus decoding speedups helps framework developers implement cost-effective context window management for high-throughput, long-context agent deployments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02985v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02985v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">prompt compression</span><span class="tag-pill">inference latency</span><span class="tag-pill">context window optimization</span><span class="tag-pill">performance benchmarking</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces InfoSeeker, a hierarchical parallel architecture using host-manager-worker coordination to mitigate context saturation and error propagation in wide-scale information search.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The sub-context isolation and parallelization patterns directly address scalability limits in data-intensive agentic search, offering a blueprint for robust high-throughput information gathering.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02971v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02971v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">hierarchical agents</span><span class="tag-pill">parallel processing</span><span class="tag-pill">web information seeking</span><span class="tag-pill">error isolation</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Reveals that alternative reasoning paths often introduce compounding errors, leading to a framework that refines initial solutions while pruning subsequent branching attempts.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Challenging blind test-time scaling heuristics suggests that compute resources should be allocated to first-solution refinement rather than exhaustive branching in reasoning-heavy agents.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02967v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02967v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">reasoning efficiency</span><span class="tag-pill">test-time compute</span><span class="tag-pill">error analysis</span><span class="tag-pill">search pruning</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Demonstrates LogicPoison, an attack that corrupts knowledge graph topology through type-preserving entity swapping, bypassing traditional semantic defenses in GraphRAG.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Identifying topological vulnerabilities necessitates structural integrity checks and logical validation layers in agents relying on graph-based knowledge retrieval pipelines.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02954v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02954v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">GraphRAG security</span><span class="tag-pill">adversarial attacks</span><span class="tag-pill">knowledge graph integrity</span><span class="tag-pill">logical poisoning</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Presents AgentHazard, a benchmark evaluating emergent harmful behaviors arising from sequential, locally plausible but collectively unsafe agent actions across tools.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Assessing multi-step risk propagation is essential for developers deploying autonomous agents in persistent environments where single-action safety checks fail to capture compound risks.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02947v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02947v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">agent safety benchmark</span><span class="tag-pill">emergent risk</span><span class="tag-pill">multi-step evaluation</span><span class="tag-pill">system autonomy</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Evaluates LLM planning optimality in structured domains, finding that reasoning-enhanced models outperform classical satisficing planners in complex multi-goal scenarios.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Understanding the efficiency ceiling of LLM planners informs architectural decisions for hybrid systems combining symbolic search with neural reasoning modules in workflow orchestration.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02910v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02910v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">LLM planning</span><span class="tag-pill">automated planning benchmarks</span><span class="tag-pill">neural-symbolic hybrid</span><span class="tag-pill">optimization analysis</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes Efficient Majority-then-Stopping, a reliability-aware scheduling algorithm that halts multi-agent voting early upon majority consensus to reduce redundant computation.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Early stopping based on confidence modeling optimizes inference budgets and reduces end-to-end latency in consensus-driven multi-agent decision pipelines.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02863v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02863v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">multi-agent voting</span><span class="tag-pill">computational efficiency</span><span class="tag-pill">scheduler optimization</span><span class="tag-pill">consensus algorithms</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Develops ESL-Bench, a synthetic benchmark providing structured longitudinal health trajectories to evaluate multi-source temporal reasoning in domain-specific agents.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The event-driven synthetic data generation methodology can be adapted to create custom longitudinal benchmarks for testing long-horizon agent memory, attribution, and state tracking.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02834v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02834v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">synthetic benchmarking</span><span class="tag-pill">longitudinal evaluation</span><span class="tag-pill">temporal reasoning</span><span class="tag-pill">health agents</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces a framework generating controllable multi-view 3D scenes from single images using video diffusion models and geometry-aware expansion planning.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Single-image to navigable 3D conversion reduces simulation environment setup costs, benefiting developers testing embodied or spatial reasoning agents in synthetic domains.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02828v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02828v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">3D scene reconstruction</span><span class="tag-pill">spatial simulation</span><span class="tag-pill">video diffusion</span><span class="tag-pill">embodied environment</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Implements an end-to-end multi-agent framework generating high-purity training data to achieve high syntax and pass rates for SystemVerilog assertion synthesis.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The task-specific agent pipeline demonstrates how specialized verification agents can be bootstrapped with synthetic data generation in data-scarce technical domains.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02811v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02811v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">multi-agent synthesis</span><span class="tag-pill">hardware verification</span><span class="tag-pill">synthetic data pipeline</span><span class="tag-pill">specialized LLMs</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces a quantitative role clarity metric using semantic similarity matrices to measure and regularize role adherence during lightweight multi-agent fine-tuning.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The metric enables developers to diagnose and correct role confusion in collaborative agent systems, ensuring stable division of labor in complex multi-role workflows.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02770v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02770v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">role consistency</span><span class="tag-pill">multi-agent coordination</span><span class="tag-pill">behavioral regularization</span><span class="tag-pill">fine-tuning metrics</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes a dual memory framework separating semantic progress tracking from logical feasibility verification to prevent goal drift in long-horizon agent tasks.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Decoupling high-level guidance from constraint validation reduces infinite failure loops, improving reliability for agents navigating extended, constraint-heavy operational environments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02734v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02734v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">neuro-symbolic architecture</span><span class="tag-pill">memory decoupling</span><span class="tag-pill">long-horizon planning</span><span class="tag-pill">progress tracking</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Develops a distributed Q-learning algorithm using two-hop redundancy filtering to guarantee optimal policy convergence despite compromised network communications.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The resilience mechanism provides a mathematical foundation for secure multi-agent reinforcement learning in decentralized or adversarial deployment environments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02791v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02791v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">distributed reinforcement learning</span><span class="tag-pill">Byzantine resilience</span><span class="tag-pill">network fault tolerance</span><span class="tag-pill">multi-agent convergence</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Advances factuality evaluation by combining atomic claim precision with importance-aware recall to measure coverage of critical external knowledge.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Evaluating information completeness alongside accuracy helps developers benchmark and refine agent response generators for high-stakes research and information synthesis tasks.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03141v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03141v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">factuality evaluation</span><span class="tag-pill">precision-recall metrics</span><span class="tag-pill">long-form generation</span><span class="tag-pill">quality assurance</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces RLVR with self-distillation, leveraging token-level policy differences to stabilize on-policy training and mitigate information leakage in verifiable reward settings.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Denser training signals from self-distillation improve the sample efficiency and stability of reinforcement learning pipelines used to align agents with external tools or environments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03128v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03128v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">reinforcement learning with verification</span><span class="tag-pill">self-distillation</span><span class="tag-pill">training stability</span><span class="tag-pill">RL optimization</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Presents MaKD, a distillation method using low-rank factorization to preserve fine-grained attention and feed-forward knowledge during language model compression.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Advanced compression techniques enable framework developers to deploy capable reasoning models with lower latency and storage requirements on edge or resource-constrained systems.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03110v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03110v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">model compression</span><span class="tag-pill">knowledge distillation</span><span class="tag-pill">deployment efficiency</span><span class="tag-pill">low-rank adaptation</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Develops an end-to-end Speech LLM applying iterative multi-turn temporal reasoning to resolve overlapping speech and long-context transcription challenges.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The iterative cache and boundary prediction architecture demonstrates scalable patterns for handling continuous, multi-participant audio streams in conversational agent input pipelines.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.03074v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.03074v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">speech LLMs</span><span class="tag-pill">temporal reasoning</span><span class="tag-pill">multi-speaker processing</span><span class="tag-pill">audio understanding</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes combining open-loop action chunking with lightweight closed-loop verification to improve computational efficiency and robustness in vision-language-action control.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">The planning-verification loop reduces inference overhead while correcting execution drift, offering a scalable architectural pattern for embodied agents operating in dynamic physical environments.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02965v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02965v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">vision-language-action models</span><span class="tag-pill">speculative execution</span><span class="tag-pill">control loop verification</span><span class="tag-pill">embodied AI</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Introduces generation-time selection where student models actively filter teacher reasoning paths during distillation to ensure trajectories align with learning capacity.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Active student feedback during knowledge transfer improves reasoning distillation efficiency, benefiting developers deploying smaller, specialized reasoning agents in distributed or hierarchical frameworks.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02819v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02819v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">reasoning distillation</span><span class="tag-pill">generation-time filtering</span><span class="tag-pill">model scaling</span><span class="tag-pill">student-in-the-loop</span></div></div>
+            </div>
+            <div class="agg-card agg-card-paper">
+                <div class="v4-node"><span class="node-marker node-marker-concept">CON(Concept):</span> <span class="node-text">Proposes an ensemble detection framework that fuses multiple independent internal representation detectors to improve Vision-Language Model hallucination identification accuracy.</span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-evaluation">E(Evaluation):</span> <span class="node-text">Leveraging internal state diversity for hallucination screening enhances the reliability of vision-grounded outputs and reduces false-positive risks in multimodal agent pipelines.</span> <span class="node-status status-u">U</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-source">SRC(Source):</span> <span class="node-text"><a href="https://arxiv.org/abs/2604.02784v1" target="_blank" rel="noopener">https://arxiv.org/abs/2604.02784v1</a></span> <span class="node-status status-v">V</span></div>
+                <div class="v4-node"><span class="node-marker node-marker-tag">TAG(SearchTag):</span> <div class="card-tags"><span class="tag-pill">hallucination detection</span><span class="tag-pill">vision-language models</span><span class="tag-pill">ensemble learning</span><span class="tag-pill">internal representation analysis</span></div></div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Content structured in <a href="/format.html">AITF v4.0</a><br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
