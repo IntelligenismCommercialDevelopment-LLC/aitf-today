@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitf.today/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/format.html</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/about.html</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/news/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/papers/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/analysis/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/insights/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://aitf.today/news/2026-04-07.html</loc>
+    <lastmod>2026-04-07</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/news/2026-04-06.html</loc>
@@ -42,6 +46,62 @@
   <url>
     <loc>https://aitf.today/papers/2026-04-06.html</loc>
     <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-parlor-real-time-multimodal-ai-integration-on-apple-silicon.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-openai-transitions-codex-pricing-to-a-token-based-credit-mod.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-nanocode-high-performance-jax-implementation-optimized-for-t.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-microsofts-copilot-branding-proliferation-a-taxonomy-of-80-d.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-karpathys-llm-wiki-shifting-from-retrieval-augmented-generat.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-high-performance-local-inference-via-gemma-4-moe-and-lm-stud.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-guppylm-an-open-source-educational-framework-for-llm-interna.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-google-releases-ai-edge-gallery-for-ios-enabling-on-device-g.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-google-deepmind-releases-gemma-4-open-model-series.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-cursor-3-transitioning-from-ai-aided-coding-to-agentic-works.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-claude-code-performance-regression-linked-to-reduced-thinkin.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-claude-code-discovers-legacy-linux-kernel-vulnerability-via.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-april-2026-setup-optimization-for-ollama-and-gemma-4-on-appl.html</loc>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-07-anthropic-restricts-third-party-harnesses-from-utilizing-cla.html</loc>
+    <lastmod>2026-04-07</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/analysis/2026-04-06-replacing-sandboxed-rag-with-a-virtual-filesystem-for-ai-doc.html</loc>

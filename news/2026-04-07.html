@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News — 2026-04-07 | AITF.TODAY</title>
+    <meta name="description" content="Daily AI agent industry signals for 2026-04-07">
+    <meta property="og:title" content="News — 2026-04-07">
+    <meta property="og:description" content="Daily AI agent industry signals for 2026-04-07">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --node-evidence: #5c4a9e;
+            --node-risk: #c43030;
+            --node-gap: #b85c00;
+            --node-assumption: #7a6850;
+            --node-mechanism: #3a7070;
+            --node-concept: #1a6b3c;
+            --node-source: #6b6560;
+            --node-tag: #5c4a9e;
+            --node-definition: #2c5aa0;
+            --node-solution: #1a6b3c;
+            --node-dependency: #7a6850;
+            --node-rule: #c43030;
+            --status-v: #1a6b3c;
+            --status-u: #7a7570;
+            --status-x: #b85c00;
+            --status-n: #c43030;
+            --type-brief-border: #b0aaa0;
+            --type-analysis-border: #4a9060;
+            --type-paper-border: #6a5a9e;
+            --type-insight-border: #c8a050;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 20px 0 16px;
+        }
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 36px;
+            color: var(--title);
+            letter-spacing: 2px;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .site-title span { color: var(--node-conclusion); }
+
+        /* Nav */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        nav .nav-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); }
+
+        /* Article content */
+        .article-container {
+            padding: 40px 0;
+            max-width: 760px;
+        }
+        .article-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .article-type-badge {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            color: #fff;
+        }
+        .badge-analysis { background: var(--type-analysis-border); }
+        .badge-brief { background: var(--type-brief-border); }
+        .badge-paper { background: var(--type-paper-border); }
+        .badge-insight { background: var(--type-insight-border); }
+        .article-title {
+            font-family: var(--font-mono);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--title);
+            line-height: 1.35;
+            margin-bottom: 28px;
+        }
+        .article-section-header {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--title);
+            margin: 28px 0 16px;
+            padding-top: 16px;
+        }
+        .article-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+        .article-text {
+            font-size: 14.5px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        /* V4 Nodes */
+        .v4-node { margin-bottom: 14px; line-height: 1.65; }
+        .v4-node-indent-1 { padding-left: 28px; }
+        .v4-node-indent-2 { padding-left: 56px; }
+        .v4-node-indent-3 { padding-left: 84px; }
+        .node-marker {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .node-marker-conclusion { color: var(--node-conclusion); }
+        .node-marker-evaluation { color: var(--node-evaluation); }
+        .node-marker-evidence { color: var(--node-evidence); }
+        .node-marker-risk { color: var(--node-risk); }
+        .node-marker-gap { color: var(--node-gap); }
+        .node-marker-assumption { color: var(--node-assumption); }
+        .node-marker-mechanism { color: var(--node-mechanism); }
+        .node-marker-concept { color: var(--node-concept); }
+        .node-marker-source { color: var(--node-source); }
+        .node-marker-tag { color: var(--node-tag); }
+        .node-marker-definition { color: var(--node-definition); }
+        .node-marker-solution { color: var(--node-solution); }
+        .node-marker-dependency { color: var(--node-dependency); }
+        .node-marker-rule { color: var(--node-rule); }
+        .node-text { color: var(--text); font-size: 14.5px; }
+        .node-status {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-left: 6px;
+            vertical-align: 1px;
+        }
+        .status-v { background: #e6f4ea; color: var(--status-v); }
+        .status-u { background: #f0eeeb; color: var(--status-u); }
+        .status-x { background: #fef0e0; color: var(--status-x); }
+        .status-n { background: #fde8e8; color: var(--status-n); }
+
+        /* Tags */
+        .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; display: inline-flex; }
+        .tag-pill {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--node-tag);
+            background: rgba(92, 74, 158, 0.08);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(92, 74, 158, 0.2);
+        }
+
+        /* Aggregation page cards */
+        .agg-card {
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .agg-card-brief {
+            background: #F3F1EC;
+            border-left: 4px solid var(--type-brief-border);
+        }
+        .agg-card-analysis {
+            background: #e6efe8;
+            border-left: 4px solid var(--type-analysis-border);
+        }
+        .agg-card-paper {
+            background: #e8e6f0;
+            border-left: 4px solid var(--type-paper-border);
+        }
+        .agg-card-title {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--title);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .agg-card-title a {
+            color: var(--title);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--border);
+        }
+        .agg-card-title a:hover { border-bottom-color: var(--title); }
+
+        /* Back link */
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: var(--title); }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+        .footer-text a:hover { color: var(--title); border-bottom-color: var(--title); }
+
+        @media (max-width: 640px) {
+            .article-title { font-size: 18px; }
+            .v4-node-indent-1 { padding-left: 16px; }
+            .v4-node-indent-2 { padding-left: 32px; }
+            .v4-node-indent-3 { padding-left: 48px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/" class="active">News</a>
+            <a href="/papers/">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+            <span class="nav-date">2026-04-07</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="article-container">
+            <a href="/" class="back-link">← Back to Home</a>
+            <h1 class="article-title">News — 2026-04-07</h1>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-google-deepmind-releases-gemma-4-open-model-series.html">Google DeepMind Releases Gemma 4 Open Model Series</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Google has launched Gemma 4, the latest generation of its open-weight model family designed for high-efficiency developer applications.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-claude-code-performance-regression-linked-to-reduced-thinkin.html">Claude Code Performance Regression Linked to Reduced Thinking Multi-Step Reasoning Capacity</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Quantitative analysis suggests a direct correlation between the reduction of "thinking" token depth and a significant degradation in Claude Code's performance for complex engineering tasks.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-anthropic-restricts-third-party-harnesses-from-utilizing-cla.html">Anthropic Restricts Third-Party Harnesses from Utilizing Claude Subscription Limits</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic is decoupling its flat-rate consumer subscriptions from third-party "harnesses" like OpenClaw, moving toward a mandatory pay-as-you-go model for non-native integrations.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-guppylm-an-open-source-educational-framework-for-llm-interna.html">GuppyLM: An Open-Source Educational Framework for LLM Internal Mechanics</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">GuppyLM provides a functional, 9-million parameter language model designed specifically for educational transparency rather than commercial performance.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-google-releases-ai-edge-gallery-for-ios-enabling-on-device-g.html">Google Releases AI Edge Gallery for iOS Enabling On-Device Gemma 4 Inference</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Google has launched a dedicated iOS application, "AI Edge Gallery," to facilitate local, offline execution of the Gemma 4 model family on iPhone hardware.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-microsofts-copilot-branding-proliferation-a-taxonomy-of-80-d.html">Microsoft's Copilot Branding Proliferation: A Taxonomy of 80 Distinct Entities</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Microsoft has implemented an aggressive "Copilot" mono-branding strategy that now encompasses 80 distinct products, features, and hardware specifications across its entire ecosystem.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-cursor-3-transitioning-from-ai-aided-coding-to-agentic-works.html">Cursor 3: Transitioning from AI-Aided Coding to Agentic Workspace Orchestration</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Cursor 3 marks a structural shift in software development tools by moving from an IDE-centric model to a unified workspace designed specifically for autonomous agent management.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-claude-code-discovers-legacy-linux-kernel-vulnerability-via.html">Claude Code Discovers Legacy Linux Kernel Vulnerability via Automated Reasoning</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">AI-driven autonomous coding tools have demonstrated the capability to identify complex, deep-seated security vulnerabilities in production-level kernel code that escaped human audit for decades.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-high-performance-local-inference-via-gemma-4-moe-and-lm-stud.html">High-Performance Local Inference via Gemma 4 MoE and LM Studio Headless CLI</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">The combination of Google’s Gemma 4 Mixture-of-Experts (MoE) architecture and LM Studio’s version 0.4.0 headless CLI enables high-capability local AI development on consumer-grade hardware.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-april-2026-setup-optimization-for-ollama-and-gemma-4-on-appl.html">April 2026 Setup Optimization for Ollama and Gemma 4 on Apple Silicon</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Consumer-grade Mac mini hardware (M-series) in 2026 is capable of serving as a persistent, high-availability local AI node for Gemma 4 models.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-karpathys-llm-wiki-shifting-from-retrieval-augmented-generat.html">Karpathy's LLM Wiki: Shifting from Retrieval-Augmented Generation to Continuous Knowledge Consolidation</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Andrej Karpathy proposes a "LLM Wiki" paradigm where AI agents move beyond temporary retrieval (RAG) to maintain a persistent, structured, and evolving markdown codebase of knowledge.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-parlor-real-time-multimodal-ai-integration-on-apple-silicon.html">Parlor: Real-Time Multimodal AI Integration on Apple Silicon</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">The "Parlor" project demonstrates that low-latency, multimodal (vision/voice) AI interaction is now achievable on consumer-grade hardware like the Apple M3 Pro without cloud dependency.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-nanocode-high-performance-jax-implementation-optimized-for-t.html">Nanocode: High-Performance JAX Implementation Optimized for TPUs via Claude Code</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Nanocode demonstrates that complex, TPU-optimized machine learning architectures can be generated by AI models like Claude for a relatively low developmental cost of $200.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-07-openai-transitions-codex-pricing-to-a-token-based-credit-mod.html">OpenAI Transitions Codex Pricing to a Token-Based Credit Model</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">OpenAI is replacing its message-based Codex pricing with a granular token-based credit system to align developer costs with actual computational consumption.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Content structured in <a href="/format.html">AITF v4.0</a><br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
