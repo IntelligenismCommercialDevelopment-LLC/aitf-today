@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitf.today/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/format.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/about.html</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/news/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/papers/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/analysis/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/insights/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://aitf.today/news/2026-04-09.html</loc>
+    <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/news/2026-04-08.html</loc>
@@ -50,6 +54,10 @@
   <url>
     <loc>https://aitf.today/papers/2026-04-06.html</loc>
     <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-09-hugging-face-sentence-transformers-v54-enables-native-multim.html</loc>
+    <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/analysis/2026-04-08-openai-restricts-gpt-2-release-citing-risks-of-automated-dis.html</loc>
