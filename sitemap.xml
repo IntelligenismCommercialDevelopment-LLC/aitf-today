@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitf.today/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/format.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/about.html</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/news/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/papers/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/analysis/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/insights/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://aitf.today/news/2026-04-11.html</loc>
+    <lastmod>2026-04-11</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/news/2026-04-09.html</loc>
@@ -54,6 +58,122 @@
   <url>
     <loc>https://aitf.today/papers/2026-04-06.html</loc>
     <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-transitioning-from-fixed-saas-ai-subscriptions-to-usage-base.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-systematic-integration-of-genai-into-workplace-writing-workf.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-strategic-implementation-of-ai-for-data-analysis-workflows.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-privacy-and-security-risks-in-vercel-plugin-telemetry-for-cl.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-practical-strategies-for-multimodal-image-generation-in-chat.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-operationalizing-personalized-ai-the-openai-custom-gpt-frame.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-systematizes-chatgpt-personalization-framework.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-strategy-chatgpt-integration-for-operational-workflow.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-strategic-pivot-toward-standardized-enterprise-market.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-standardizes-reusable-ai-workflows-via-skillmd-and-ac.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-prompting-fundamentals-core-framework-for-effective-l.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-launches-chatgpt-academy-for-sales-operations.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-launches-academy-initiative-to-standardize-ai-literac.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-introduces-projects-to-formalize-chatgpt-workflow-man.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-categorizes-ai-driven-investigation-into-search-and-d.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-targets-financial-services-with-specialized-f.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-structures-ai-portfolio-into-consumer-and-pro.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-launches-strategic-framework-for-ai-enabled-m.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-launches-specialized-chatgpt-implementation-f.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-guidelines-for-responsible-ai-deployment.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-generative-ai-frameworks-for-clinical-workflo.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-chatgpt-for-customer-success-operations.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-openai-academy-a-foundational-framework-for-understanding-ai.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-model-context-protocol-mcp-maintains-architectural-superiori.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-megatrain-enabling-100b-parameter-model-training-on-single-g.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-framework-for-structured-ai-assisted-brainstorming.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-cyberagent-scaling-operational-efficiency-via-chatgpt-enterp.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-claude-attribution-error-internal-model-dialogue-misidentifi.html</loc>
+    <lastmod>2026-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-11-chatgpt-file-integration-and-data-interaction-framework.html</loc>
+    <lastmod>2026-04-11</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/analysis/2026-04-09-hugging-face-sentence-transformers-v54-enables-native-multim.html</loc>
