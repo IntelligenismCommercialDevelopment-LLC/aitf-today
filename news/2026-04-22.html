@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News — 2026-04-22 | AITF.TODAY</title>
+    <meta name="description" content="Daily AI agent industry signals for 2026-04-22">
+    <meta property="og:title" content="News — 2026-04-22">
+    <meta property="og:description" content="Daily AI agent industry signals for 2026-04-22">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAF9F6;
+            --bg-alt: #F3F1EC;
+            --text: #1a1a1a;
+            --text-dim: #6b6560;
+            --text-light: #9a9590;
+            --title: #2c2520;
+            --border: #d8d4cf;
+            --border-light: #e8e5e0;
+            --node-conclusion: #1a6b3c;
+            --node-evaluation: #2c5aa0;
+            --node-evidence: #5c4a9e;
+            --node-risk: #c43030;
+            --node-gap: #b85c00;
+            --node-assumption: #7a6850;
+            --node-mechanism: #3a7070;
+            --node-concept: #1a6b3c;
+            --node-source: #6b6560;
+            --node-tag: #5c4a9e;
+            --node-definition: #2c5aa0;
+            --node-solution: #1a6b3c;
+            --node-dependency: #7a6850;
+            --node-rule: #c43030;
+            --status-v: #1a6b3c;
+            --status-u: #7a7570;
+            --status-x: #b85c00;
+            --status-n: #c43030;
+            --type-brief-border: #b0aaa0;
+            --type-analysis-border: #4a9060;
+            --type-paper-border: #6a5a9e;
+            --type-insight-border: #c8a050;
+            --font-pixel: 'VT323', monospace;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--title);
+            padding: 20px 0 16px;
+        }
+        .site-title {
+            font-family: var(--font-pixel);
+            font-size: 36px;
+            color: var(--title);
+            letter-spacing: 2px;
+            text-decoration: none;
+            line-height: 1;
+        }
+        .site-title span { color: var(--node-conclusion); }
+
+        /* Nav */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; gap: 28px; align-items: center; }
+        nav a {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active { color: var(--title); border-bottom-color: var(--title); }
+        nav .nav-spacer { flex: 1; }
+        nav .nav-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); }
+
+        /* Article content */
+        .article-container {
+            padding: 40px 0;
+            max-width: 760px;
+        }
+        .article-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .article-type-badge {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            color: #fff;
+        }
+        .badge-analysis { background: var(--type-analysis-border); }
+        .badge-brief { background: var(--type-brief-border); }
+        .badge-paper { background: var(--type-paper-border); }
+        .badge-insight { background: var(--type-insight-border); }
+        .article-title {
+            font-family: var(--font-mono);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--title);
+            line-height: 1.35;
+            margin-bottom: 28px;
+        }
+        .article-section-header {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--title);
+            margin: 28px 0 16px;
+            padding-top: 16px;
+        }
+        .article-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+        .article-text {
+            font-size: 14.5px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        /* V4 Nodes */
+        .v4-node { margin-bottom: 14px; line-height: 1.65; }
+        .v4-node-indent-1 { padding-left: 28px; }
+        .v4-node-indent-2 { padding-left: 56px; }
+        .v4-node-indent-3 { padding-left: 84px; }
+        .node-marker {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .node-marker-conclusion { color: var(--node-conclusion); }
+        .node-marker-evaluation { color: var(--node-evaluation); }
+        .node-marker-evidence { color: var(--node-evidence); }
+        .node-marker-risk { color: var(--node-risk); }
+        .node-marker-gap { color: var(--node-gap); }
+        .node-marker-assumption { color: var(--node-assumption); }
+        .node-marker-mechanism { color: var(--node-mechanism); }
+        .node-marker-concept { color: var(--node-concept); }
+        .node-marker-source { color: var(--node-source); }
+        .node-marker-tag { color: var(--node-tag); }
+        .node-marker-definition { color: var(--node-definition); }
+        .node-marker-solution { color: var(--node-solution); }
+        .node-marker-dependency { color: var(--node-dependency); }
+        .node-marker-rule { color: var(--node-rule); }
+        .node-text { color: var(--text); font-size: 14.5px; }
+        .node-status {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-left: 6px;
+            vertical-align: 1px;
+        }
+        .status-v { background: #e6f4ea; color: var(--status-v); }
+        .status-u { background: #f0eeeb; color: var(--status-u); }
+        .status-x { background: #fef0e0; color: var(--status-x); }
+        .status-n { background: #fde8e8; color: var(--status-n); }
+
+        /* Tags */
+        .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; display: inline-flex; }
+        .tag-pill {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--node-tag);
+            background: rgba(92, 74, 158, 0.08);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(92, 74, 158, 0.2);
+        }
+
+        /* Aggregation page cards */
+        .agg-card {
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .agg-card-brief {
+            background: #F3F1EC;
+            border-left: 4px solid var(--type-brief-border);
+        }
+        .agg-card-analysis {
+            background: #e6efe8;
+            border-left: 4px solid var(--type-analysis-border);
+        }
+        .agg-card-paper {
+            background: #e8e6f0;
+            border-left: 4px solid var(--type-paper-border);
+        }
+        .agg-card-title {
+            font-family: var(--font-mono);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--title);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .agg-card-title a {
+            color: var(--title);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--border);
+        }
+        .agg-card-title a:hover { border-bottom-color: var(--title); }
+
+        /* Back link */
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-dim);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: var(--title); }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 2;
+        }
+        .footer-text a {
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-light);
+        }
+        .footer-text a:hover { color: var(--title); border-bottom-color: var(--title); }
+
+        @media (max-width: 640px) {
+            .article-title { font-size: 18px; }
+            .v4-node-indent-1 { padding-left: 16px; }
+            .v4-node-indent-2 { padding-left: 32px; }
+            .v4-node-indent-3 { padding-left: 48px; }
+            nav .container { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title">AITF<span>.</span>TODAY</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container">
+            <a href="/">Home</a>
+            <a href="/news/" class="active">News</a>
+            <a href="/papers/">Papers</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/insights/">Insights</a>
+            <a href="/format.html">AITF Format</a>
+            <a href="/about.html">About</a>
+            <span class="nav-spacer"></span>
+            <span class="nav-date">2026-04-22</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="article-container">
+            <a href="/" class="back-link">← Back to Home</a>
+            <h1 class="article-title">News — 2026-04-22</h1>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-anthropic-launches-claude-design-bridging-the-gap-between-pr.html">Anthropic Launches Claude Design: Bridging the Gap Between Prototyping and Production</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic has released Claude Design, an experimental AI-driven workspace that automates the transition from visual conceptualization to functional code handoff.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-openai-launches-chatgpt-images-20-with-enhanced-text-renderi.html">OpenAI Launches ChatGPT Images 2.0 with Enhanced Text Rendering and Realism</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">OpenAI has released ChatGPT Images 2.0, a significant update to its native image generation system focused on photorealism, complex layout control, and precise multilingual text rendering.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-analysis-of-claude-47-tokenizer-efficiency-and-performance-t.html">Analysis of Claude 4.7 Tokenizer Efficiency and Performance Trade-offs</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic's Claude 4.7 update introduces a new tokenizer that significantly increases token consumption for English text and code, effectively raising operational costs by 20% to 47% despite unchanged</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-qwen36-max-preview-advancements-in-agentic-coding-and-world.html">Qwen3.6-Max-Preview: Advancements in Agentic Coding and World Knowledge</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Alibaba's Qwen team has released Qwen3.6-Max-Preview, a proprietary model demonstrating significant performance gains in autonomous agent tasks and specialized coding benchmarks.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-spacex-secures-option-to-acquire-cursor-ai-for-60-billion.html">SpaceX Secures Option to Acquire Cursor AI for $60 Billion</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">SpaceX has entered into a strategic partnership with Cursor that includes a $60 billion acquisition option to integrate AI coding tools with massive compute resources.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-potential-shift-in-anthropic-pricing-claude-code-access-chan.html">Potential Shift in Anthropic Pricing: Claude Code Access Changes</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic appears to be restructuring the availability of "Claude Code" by potentially removing it from the standard $20/month Pro tier.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-anthropic-reauthorizes-claude-cli-integration-for-openclaw-w.html">Anthropic Reauthorizes Claude CLI Integration for OpenClaw Workflows</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic has reversed its previous stance, officially permitting OpenClaw and similar third-party tools to reuse the Claude Command Line Interface (CLI) session for model access.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-expanded-access-to-github-copilot-for-education-and-open-sou.html">Expanded Access to GitHub Copilot for Education and Open Source</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">GitHub is transition Copilot Individual into a multi-tier access model by providing full capability at no cost to verified educational users and open-source maintainers.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-the-migration-of-design-sovereignty-from-figma-primitives-to.html">The Migration of Design Sovereignty: From Figma Primitives to Agentic Code</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">The emergence of "Claude Design" signals a structural shift where the source of truth for product design is migrating from proprietary design tool schemas back to functional code.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-evolutionary-shifts-in-claude-opus-47-system-prompt-architec.html">Evolutionary Shifts in Claude Opus 4.7 System Prompt Architectures</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">The transition from Claude Opus 4.6 to 4.7 represents a shift from reactive guardrails to proactive, tool-centric agentic behavior and refined conversational ergonomics.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-openai-ad-partner-begins-selling-chatgpt-placements-via-prom.html">OpenAI Ad Partner Begins Selling ChatGPT Placements via Prompt Relevance</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">OpenAI partner StackAdapt has launched a pilot program to sell advertisement placements within ChatGPT based on real-time query context.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-claude-code-status-changes-in-anthropic-pro-tier-pricing.html">Claude Code Status Changes in Anthropic Pro Tier Pricing</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic appears to have removed "Claude Code" from the listed features of its $20/month Pro tier subscription, signaling a shift in how its developer preview tools are monetized.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>hn</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-claude-47-token-inflation-analysis-of-anthropics-updated-tok.html">Claude 4.7 Token Inflation: Analysis of Anthropic’s Updated Tokenizer and Pricing Impact</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Anthropic's release of Claude Opus 4.7 introduces a new tokenizer that significantly increases the token count for identical inputs compared to previous models, resulting in an effective price increas</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>rss</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-openai-scales-codex-for-global-enterprise-deployment-via-sys.html">OpenAI Scales Codex for Global Enterprise Deployment via Systems Integrators</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">OpenAI is transitioning Codex from an individual developer tool to an enterprise-grade platform through a dual strategy of direct consulting and massive partnerships with Global Systems Integrators (G</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>rss</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-openai-and-hyatt-execute-enterprise-wide-ai-deployment.html">OpenAI and Hyatt Execute Enterprise-Wide AI Deployment</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">Hyatt has transitioned from experimental AI pilots to a full-scale deployment of ChatGPT Enterprise across its global corporate and hotel workforce.</span>
+                </div>
+            </div>
+            <div class="agg-card agg-card-analysis">
+                <div class="article-meta">
+                    <span class="article-type-badge badge-analysis">ANALYSIS</span>
+                    <span>rss</span>
+                </div>
+                <div class="agg-card-title"><a href="/analysis/2026-04-22-qimma-a-systematic-quality-first-approach-to-arabic-llm-eval.html">QIMMA: A Systematic Quality-First Approach to Arabic LLM Evaluation</a></div>
+                <div class="v4-node">
+                    <span class="node-marker node-marker-conclusion">C(Conclusion):</span>
+                    <span class="node-text">The launch of QIMMA (قمّة) establishes a new technical standard for Arabic LLM evaluation by prioritizing dataset integrity through a multi-stage validation pipeline.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                AITF.TODAY — Agent Interaction Text Format<br>
+                Content structured in <a href="/format.html">AITF v4.0</a><br>
+                <a href="https://intelligenism.club">Intelligenism Commercial Development LLC</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aitf.today/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/format.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/about.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/news/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/papers/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/analysis/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://aitf.today/insights/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://aitf.today/news/2026-04-22.html</loc>
+    <lastmod>2026-04-22</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/news/2026-04-14.html</loc>
@@ -62,6 +66,70 @@
   <url>
     <loc>https://aitf.today/papers/2026-04-06.html</loc>
     <lastmod>2026-04-06</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-the-migration-of-design-sovereignty-from-figma-primitives-to.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-spacex-secures-option-to-acquire-cursor-ai-for-60-billion.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-qwen36-max-preview-advancements-in-agentic-coding-and-world.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-qimma-a-systematic-quality-first-approach-to-arabic-llm-eval.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-potential-shift-in-anthropic-pricing-claude-code-access-chan.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-openai-scales-codex-for-global-enterprise-deployment-via-sys.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-openai-launches-chatgpt-images-20-with-enhanced-text-renderi.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-openai-and-hyatt-execute-enterprise-wide-ai-deployment.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-openai-ad-partner-begins-selling-chatgpt-placements-via-prom.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-expanded-access-to-github-copilot-for-education-and-open-sou.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-evolutionary-shifts-in-claude-opus-47-system-prompt-architec.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-claude-code-status-changes-in-anthropic-pro-tier-pricing.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-claude-47-token-inflation-analysis-of-anthropics-updated-tok.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-anthropic-reauthorizes-claude-cli-integration-for-openclaw-w.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-anthropic-launches-claude-design-bridging-the-gap-between-pr.html</loc>
+    <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://aitf.today/analysis/2026-04-22-analysis-of-claude-47-tokenizer-efficiency-and-performance-t.html</loc>
+    <lastmod>2026-04-22</lastmod>
   </url>
   <url>
     <loc>https://aitf.today/analysis/2026-04-14-openai-launches-100month-chatgpt-pro-tier-for-power-users.html</loc>
